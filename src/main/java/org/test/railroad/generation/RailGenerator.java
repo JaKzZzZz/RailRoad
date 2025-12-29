@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.Heightmap;
+import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkStatus;
 import org.test.railroad.analysis.GroundScanResult;
 import org.test.railroad.analysis.StoneScanResult;
@@ -34,6 +35,9 @@ public class RailGenerator {
             .setRandom(createLocal());
 
     public static void generateSegment(ServerWorld world) {
+        if (world.getRegistryKey() != World.OVERWORLD) {
+            return;
+        }
 
         RailWorldState state = RailWorldState.get(world);
 
@@ -347,3 +351,6 @@ public class RailGenerator {
 
 //проверить совместимость версий
 //убрать ватерлог блооков (опц.)
+
+//проверка локализации
+//проверка норм действия в незере

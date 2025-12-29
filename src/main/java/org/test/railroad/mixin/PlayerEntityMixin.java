@@ -48,7 +48,7 @@ public abstract class PlayerEntityMixin {
 
             ItemStack compass = CompassInit.createRailCompass(world);
             player.getInventory().insertStack(compass);
-            player.sendMessage(Text.literal("Вам выдан компас, указывающий на начало железной дороги" + " (x = " + state.spawnX +")"), false);
+            player.sendMessage(Text.translatable("message.railroad.rail_compass_given"), false);
 
             untitled2_compassGiven = true;
         }

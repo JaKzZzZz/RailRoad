@@ -1,1 +1,1 @@
-RailRoad is a mod that provides endless railway through the minecraft world, for now it available only for fabric 1.20.1, but i plan to suppert the mod if there is reaction to it!
+RailRoad is a mod that provides endless railway through the minecraft world, for now it available only for fabric 1.20.1, but i plan to support the mod and expand to other versions and loaders if there is reaction to it!

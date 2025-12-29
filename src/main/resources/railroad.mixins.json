@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.test.railroad.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ConfiguredFeaturesGeneration",
+    "PlayerEntityMixin",
+    "StructurePlacementMixin",
+    "TickListener"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

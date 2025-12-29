@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "railroad",
+  "version": "${version}",
+  "name": "RailRoad",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.test.railroad.client.RailRoadDataGenerator"
+    ],
+    "client": [
+      "org.test.railroad.client.RailRoadClient"
+    ],
+    "main": [
+      "org.test.railroad.RailRoad"
+    ]
+  },
+  "mixins": [
+    "railroad.mixins.json",
+    {
+      "config": "railroad.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">=${minecraft_version}",
+    "create": [
+      ">=0.5.1-j-build.1631+mc1.20.1 <6.0.0"
+    ],
+    "railways": ">=1.6.9+fabric-mc1.20.1",
+    "midnightlib": "*"
+  }
+}

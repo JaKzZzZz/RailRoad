@@ -1,0 +1,171 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": { "min": 2, "max": 4 },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:andesite_alloy",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 2 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:andesite_alloy",
+          "weight": 10,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 2 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:brass_ingot",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:brass_ingot",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:precision_mechanism",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:track",
+          "weight": 30,
+          "functions": [
+            { "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:track",
+          "weight": 30,
+          "functions": [
+            { "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:railway_casing",
+          "weight": 40,
+          "functions": [
+            { "function": "minecraft:set_count", "count": { "min": 1, "max": 3 } }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:railway_casing",
+          "weight": 40,
+          "functions": [
+            { "function": "minecraft:set_count", "count": { "min": 1, "max": 3 } }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:builders_tea",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:honeyed_apple",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:sweet_roll",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:bar_of_chocolate",
+          "weight": 15,
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:white_seat",
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:white_seat",
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:white_seat",
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:controls",
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create:wrench",
+          "functions": [
+            { "function": "minecraft:set_count", "count": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

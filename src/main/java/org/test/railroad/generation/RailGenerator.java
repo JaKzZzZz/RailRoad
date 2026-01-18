@@ -26,7 +26,7 @@ import static org.test.railroad.analysis.TerrainAnalyzers.getHighestGroundAhead;
 import static org.test.railroad.generation.BuildSupports.buildGroundUpToTemplate;
 
 public class RailGenerator {
-    public static int RAIL_Z = -6;
+    public static int RAIL_Z = 2;
 
     public static StructurePlacementData placementData = new StructurePlacementData()
             .setRotation(BlockRotation.NONE)
@@ -116,8 +116,6 @@ public class RailGenerator {
 
         BuildSupports.placeSupport(world, finalPlacePos, choice, template);
 
-        tryPlaceSideStructure(world, finalPlacePos, d);
-
         state.lastSegmentX = lastSegmentEndX;
         state.lastY = lastY;
         state.markDirty();
@@ -179,7 +177,7 @@ public class RailGenerator {
             return new TemplateChoice(new Identifier("org.test.railroad", "rail/startsegment"), -2, 2, false, true, true);
         }
 
-        if (d.dy >= 10 || d.dy == 0) {
+        if (d.dy >= 40 || d.dy == 0) {
             RailLog.d("[LOG] chooseTemplate: choosing d0ver1 (no change or absurdly large positive)");
             return new TemplateChoice(new Identifier("org.test.railroad", "rail/d0ver1" + (d.mine ? (chance ? "gr_mine01" : "gr") : "")), 0, 0, false, true, false);
         }
@@ -270,69 +268,6 @@ public class RailGenerator {
     }
     public static boolean chancePercent(int percent, Random random) {
         return random.nextInt(100) < percent;
-    }
-    private static void tryPlaceSideStructure(
-            ServerWorld world,
-            BlockPos railPlacePos, GroundDecision d
-    ) {
-        int zOffset = 13;
-        int minusZOffset = -6;
-        int gy = 0;
-        int gz = 0;
-        Identifier id = null;
-        GroundScanResult gLeft = getHighestGroundAhead(world, railPlacePos.add(0, 0, minusZOffset), 32);
-        GroundScanResult gRight = getHighestGroundAhead(world, railPlacePos.add(0, 0, zOffset), 32);
-
-        // шанс
-        if (!chancePercent(8, world.random)) return;
-
-        if (d.start || gRight.water() || gLeft.water()) return;
-
-        if (d.mine) {
-            RailLog.d("[SIDE] not spawning, mine segment");
-            return;
-        }
-
-        if ((gLeft.highest() - gLeft.lowest()) < 2) {
-            gz = railPlacePos.getZ() + minusZOffset;
-            gy = gLeft.highest();
-            id = new Identifier(
-                    "org.test.railroad",
-                    "rail/tower"
-            );
-        } else if ((gRight.highest() - gRight.lowest()) < 2) {
-            gz = railPlacePos.getZ() + zOffset;
-            gy = gRight.highest();
-            id = new Identifier(
-                    "org.test.railroad",
-                    "rail/train"
-            );
-        } else {
-            return;
-        }
-                BlockPos placePos = new BlockPos(
-                railPlacePos.getX(),
-                gy, gz
-        );
-        StructureTemplateManager manager = world.getStructureTemplateManager();
-        StructureTemplate template = manager.getTemplate(id).orElse(null);
-        if (template == null) {
-            RailLog.d("[SIDE] template not found: " + id);
-            return;
-        }
-
-        buildGroundUpToTemplate(world, template, placePos);
-
-        RailLog.d("[SIDE] placing " + id + " y=" + gy + " Δy=" + (d.dy));
-
-        template.place(
-                world,
-                placePos,
-                placePos,
-                placementData,
-                world.getRandom(),
-                Block.NOTIFY_LISTENERS | Block.FORCE_STATE
-        );
     }
 }
 

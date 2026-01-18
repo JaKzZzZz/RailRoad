@@ -32,7 +32,7 @@
     "fabric": "*",
     "minecraft": ">=${minecraft_version}",
     "create": [
-      ">=0.5.1-j-build.1631+mc1.20.1 <6.0.0"
+      ">=0.5.1-j-build.1631+mc1.20.1"
     ],
     "railways": ">=1.6.9+fabric-mc1.20.1",
     "midnightlib": "*"

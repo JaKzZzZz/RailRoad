@@ -22,7 +22,7 @@ public abstract class ConfiguredFeaturesGeneration {
         if (!ENABLED_THIS_WORLD) return;
         ChunkPos pos = chunk.getPos();
 
-        if (pos.getStartX() > -15 && pos.getStartZ() >= -20 && pos.getStartZ() <= 1) {
+        if (pos.getStartX() > -15 && pos.getStartZ() >= -1 && pos.getStartZ() <= 1) {
             RailLog.d("ConfiguredFeaturesGeneration заблокирован спавн фич по адресу " + pos);
             ci.cancel();
         }

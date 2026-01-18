@@ -108,7 +108,7 @@ public class TerrainAnalyzers {
         for (int dx = 0; dx < length; dx++) {
             int x = placePos.getX() + dx;
 
-            BlockPos posTop = new BlockPos(x, y + + (template.getSize().getY() / 2), z);
+            BlockPos posTop = new BlockPos(x, y + (template.getSize().getY() / 2), z);
             BlockPos posMid = new BlockPos(x, y, z);
 
             BlockState stateTop = world.getBlockState(posTop);
